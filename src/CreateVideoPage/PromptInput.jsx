@@ -1,4 +1,4 @@
-import { Input } from "@shadcn/ui/input";
+import { Input } from "./ui/input";
 
 export default function PromptInput({ value, onChange }) {
   return (

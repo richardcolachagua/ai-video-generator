@@ -2,7 +2,7 @@ import { useState } from "react";
 import PromptInput from "./PromptInput";
 import FormatSelector from "./FormatSelector";
 import StyleSelector from "./StyleSelector";
-import { Button } from "@shadcn/ui/button";
+import { Button } from "./ui/button";
 
 export default function TextToVideoForm() {
   //Form State

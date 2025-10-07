@@ -1,9 +1,4 @@
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-} from "@shadcn/ui/select";
+import { Select, SelectTrigger, SelectContent, SelectItem } from "./ui/select";
 
 const formats = [
   { value: "16:9", label: "Landscape (16:9)" },

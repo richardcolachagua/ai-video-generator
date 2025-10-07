@@ -1,4 +1,4 @@
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@shadcn/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import TextToVideoForm from "./TextToVideoForm";
 
 export default function TabSwitcher() {

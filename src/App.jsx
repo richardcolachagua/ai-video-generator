@@ -1,26 +1,49 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HeroSection from "./components/HeroSection";
+import HowItWorks from "./components/HowItWorks";
+import GalleryPreview from "./components/GalleryPreview";
+import Footer from "./components/Footer";
 
-import "./App.css";
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+// Placeholder pages
+function HelpPage() {
+  return <div className="text-white p-8">Help/FAQ coming soon.</div>;
+}
+function TermsPage() {
+  return <div className="text-white p-8">Terms & Privacy coming soon.</div>;
+}
+function CreatePage() {
+  return <div className="text-white p-8">Create page coming soon.</div>;
+}
+function GalleryPage() {
+  return <div className="text-white p-8">Gallery page coming soon.</div>;
 }
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <div className="bg-ironmanBlack min-h-screen flex flex-col">
+        <Navbar />
+        <main className="pt-24 flex-1">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HeroSection />
+                  <HowItWorks />
+                  <GalleryPreview />
+                </>
+              }
+            />
+            <Route path="/help" element={<HelpPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/create" element={<CreatePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
