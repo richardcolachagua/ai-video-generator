@@ -1,9 +1,9 @@
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between items-center px-8 py-4 bg-ironmanBlack border-b border-ironmanRed fixed top-0 z-50">
+    <nav className="fixed top-0 z-50 w-full h-16 flex items-center justify-between px-8 bg-ironmanBlack border-b border-ironmanRed">
       <Link
         to="/"
         className="text-3xl font-bold text-ironmanGold tracking-widest"

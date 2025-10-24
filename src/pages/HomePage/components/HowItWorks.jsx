@@ -1,5 +1,5 @@
-import { Card, CardContent } from "./ui/card";
-import { Input } from "./ui/input";
+import { Card, CardContent } from "../../../components/ui/card";
+import { Input } from "../../../components/ui/input";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { FaImage, FaRegEdit } from "react-icons/fa";
