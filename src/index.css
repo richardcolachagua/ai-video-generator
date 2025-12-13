@@ -16,6 +16,8 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  --radius: 0.625rem;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +63,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  display: block;
 }
 
 h1 {
@@ -108,11 +109,12 @@ button:focus-visible {
 /* --- DARK MODE + BASE RESET --- */
 @layer base {
   * {
-    border-color: var(--border);
+    border-color: rgba(255, 255, 255, 0.1);
+    outline-color: rgba(255, 255, 255, 0.2);
   }
 
   body {
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: #000000; /* ironmanBlack */
+    color: #ffffff; /* text-white */
   }
 }

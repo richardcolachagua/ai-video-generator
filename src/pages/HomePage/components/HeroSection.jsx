@@ -1,51 +1,62 @@
 import VoiceIntro from "./VoiceIntro";
 import { motion } from "framer-motion";
 import { VideoText } from "../../../components/ui/video-text";
+import { Button } from "../../../components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[calc(100dvh-4rem)] flex flex-col justify-center items-center text-center bg-ironmanBlack overflow-hidden">
-      {/* Background Video */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 object-cover opacity-40"
-        src="/assets/nova-bg.mp4"
-      /> */}
-      {/* Centered Content */}
-      <div className="relative flex flex-col items-center justify-center w-full">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="leading-none"
-        >
-          {/* Give the logo a controlled height */}
-          <VideoText
-            src="https://cdn.magicui.design/ocean-small.webm"
-            className="
-        h-[28vw] md:h-[14vw]             /* <-- controls logo block height */
-        w-[80vw] md:w-[60vw] lg:w-[50vw] /* width as you like */
-        leading-none
-      "
-            fontSize={20}
-          >
-            N.O.V.A.
-          </VideoText>
-        </motion.div>
-
-        {/* Tighten the copy spacing */}
-        <h2 className="mt-3 text-3xl text-ironmanRed tracking-widest font-semibold text-center">
-          Neural Output Video Assistant
-        </h2>
-        <p className="mt-1 text-2xl text-ironmanSilver text-center">
-          Creating stunning AI-powered videos from text or images in seconds
-        </p>
+    <section className="relative overflow-hidden bg-black text-white">
+      {/* Background visual / visual */}
+      <div className="pointer-events-none absolute inset-0 opacity-50">
+        <VideoText />
       </div>
 
-      <VoiceIntro />
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 py-20 text-center md:flex-row md:items-center md:text-left">
+        <motion.div
+          className="flex-1 space-y-4"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-3 rounded-full bg-white/5 px-4 py-1 text-sm">
+            <span className="h-8 w-8 rounded-full bg-gradient-to-br from-ironmanRed to-ironmanGold" />
+            <span className="font-semibold tracking-wide text-ironmanGold">
+              N.O.V.A.
+            </span>
+          </div>
+
+          <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+            Neural Output Video Assistant
+          </h1>
+          <p className="max-w-xl text-sm text-white/70 sm:text-base">
+            Create stunning AI-powered videos from text or images in seconds.
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+            <Link to="/create?mode=text">
+              <Button
+                size="lg"
+                className="bg-ironmanRed hover:bg-ironmanRed/98"
+              >
+                Start with text
+              </Button>
+            </Link>
+
+            <Link to="/create?mode=image">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white/40 bg-white/5 text-white hover:bg-white/10"
+              >
+                Start with Image
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Preview + optional voice intro trigger */}
+      </div>
     </section>
   );
 }

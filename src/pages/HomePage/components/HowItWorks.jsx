@@ -4,6 +4,8 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { FaImage, FaRegEdit } from "react-icons/fa";
 
+const steps = [{ id: "text" }];
+
 export default function HowItWorks() {
   return (
     <section className="w-full py-20 px-4 bg-ironmanBlack flex flex-col items-center gap-16">
